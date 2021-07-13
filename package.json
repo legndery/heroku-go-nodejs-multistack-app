@@ -7,8 +7,8 @@
     "start": "node ./node-stack/build/index.js",
     "start:dev": "nodemon --exec babel-node ./node-stack/src/index.js",
     "clean": "rm -rf ./node-stack/build && mkdir ./node-stack/build",
-    "build-babel": "babel -d ./node-stack/build  ./node-stack/src/index.js -s",
-    "build": "npm run build-babel",
+    "build-babel": "babel -d ./node-stack/build  ./node-stack/src/ -s",
+    "build": "npm run clean && npm run build-babel",
     "test": "./node_modules/.bin/mocha --require @babel/register"
   },
   "repository": {
