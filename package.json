@@ -4,7 +4,7 @@
   "description": "portfolio apis",
   "main": "node-stack/src/index.js",
   "scripts": {
-    "start": "node ./node-stack/build/app.js",
+    "start": "node ./node-stack/build/index.js",
     "start:dev": "nodemon --exec babel-node ./node-stack/src/index.js",
     "clean": "rm -rf ./node-stack/build && mkdir ./node-stack/build",
     "build-babel": "babel -d ./node-stack/build  ./node-stack/src/index.js -s",
