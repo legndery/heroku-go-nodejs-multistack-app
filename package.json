@@ -1,6 +1,6 @@
 {
   "name": "portfolio-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "portfolio apis",
   "main": "node-stack/src/index.js",
   "scripts": {
