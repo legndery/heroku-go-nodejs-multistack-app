@@ -16,13 +16,9 @@ COPY --from=builder /build/portfolio-app /root/
 # build nodejs app
 ENV APP_ROOT /home/app
 WORKDIR $APP_ROOT
-COPY .babelrc package*.json $APP_ROOT/
+COPY .babelrc package*.json infrastructure/docker-entrypoint.sh $APP_ROOT/
 RUN npm install
 COPY node-stack/ $APP_ROOT/node-stack/
 RUN npm run build
 # run all the commands
-CMD /bin/sh -c "export PORT=\"${PORT:-8080}\" && \
-  envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && \
-  (/root/portfolio-app &) && \
-  (npm start &) && \
-  nginx -g 'daemon off;'"
+CMD ["/bin/sh","-c", "./docker-entrypoint.sh"]
