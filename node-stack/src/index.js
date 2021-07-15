@@ -9,3 +9,7 @@ app.use(router);
 app.listen(PORT, () => {
   console.log(`Application running at ${PORT}`);
 });
+// Keep awake heroku server
+if(process.env.HEROKU_URL) {
+  require('./utils/keepawake');
+}
