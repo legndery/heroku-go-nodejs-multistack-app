@@ -16,7 +16,7 @@ COPY --from=builder /build/portfolio-app /root/
 # build nodejs app
 ENV APP_ROOT /home/app
 WORKDIR $APP_ROOT
-COPY .babelrc package*.json $APP_ROOT
+COPY .babelrc package*.json $APP_ROOT/
 RUN npm install
 COPY node-stack/ $APP_ROOT/node-stack/
 RUN npm run build
