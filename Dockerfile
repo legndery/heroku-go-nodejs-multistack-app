@@ -21,4 +21,5 @@ RUN npm install
 COPY node-stack/ $APP_ROOT/node-stack/
 RUN npm run build
 # run all the commands
+RUN ["chmod", "+x", "./docker-entrypoint.sh"]
 CMD ["/bin/sh","-c", "./docker-entrypoint.sh"]
