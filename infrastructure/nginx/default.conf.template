@@ -1,7 +1,10 @@
 server {
   listen $PORT default_server;
 
-  location / {
+  location /gv1/ {
     proxy_pass http://127.0.0.1:3000/;
+  }
+  location /nv1/ {
+    proxy_pass http://127.0.0.1:3001/;
   }
 }

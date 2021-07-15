@@ -1,1 +1,0 @@
-web: npx nf -j ./ProcfileForeman start
